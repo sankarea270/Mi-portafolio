@@ -74,7 +74,11 @@
       return;
     }
     showMessage('Cargando proyectos…');
-    var promises = FEATURED_REPOS.map(function(r){ return fetchRepo(r).catch(function(err){ return {__error: err.message, name: r}; }); });
+    // Allow users to write repo names with any capitalization; fetch by lowercased name
+    var promises = FEATURED_REPOS.map(function(r){
+      var fetchName = (typeof r === 'string') ? r.toLowerCase() : r;
+      return fetchRepo(fetchName).catch(function(err){ return {__error: err.message, name: r}; });
+    });
     Promise.all(promises).then(function(results){
       container.innerHTML = '';
       results.forEach(function(repo){
