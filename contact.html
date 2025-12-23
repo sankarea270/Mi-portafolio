@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - José Manuel Meza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="site-header"></div>
+    <canvas id="canvas-bg"></canvas>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="grid-overlay"></div>
+
+    <section class="contact">
+        <div class="section-title">Contacto</div>
+        <div class="contact-content">
+            <p>¿Tienes un proyecto o quieres colaborar? Escríbeme y te respondo pronto.</p>
+
+            <div style="display:flex;gap:30px;justify-content:center;margin-top:40px;flex-wrap:wrap">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <h3>Email</h3>
+                    <a href="mailto:tuemail@dominio.com">manuel270147123@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <i>📱</i>
+                    <h3>Teléfono</h3>
+                    <a href="tel:+000000000">+51 917 608 749</a>
+                </div>
+            </div>
+
+            <div id="form-status" class="form-status" aria-live="polite" style="margin-top:20px"></div>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xeejpvbv" method="post" style="margin-top:20px">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu email" required>
+                <textarea name="message" rows="6" placeholder="Mensaje" required></textarea>
+                <input type="hidden" name="_subject" value="Mensaje desde el portafolio">
+                <button class="btn" type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="include-fragments.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
